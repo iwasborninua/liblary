@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-        <table class="table">
+        <table class="table align-middle">
             <thead>
             <tr>
                 <td>id</td>
@@ -15,15 +15,15 @@
             </thead>
             @foreach($books as $book)
                 <tr>
-                    <td>{{$book->id}}</td>
+                    <td class="">{{$book->id}}</td>
                     <td>{{$book->name}}</td>
                     <td>{{$book->author}}</td>
                     <td>{{$book->isbn}}</td>
                     <td>{{$book->genre}}</td>
                     <td>
-                        <a class="" href="">Detail</a>
-                        <a href="">Update</a>
-                        <a href="">Delete</a>
+                        <a class="btn btn-info me-2" href="">Detail</a>
+                        <a class="btn btn-info me-2" href="">Update</a>
+                        <a class="btn btn-info" href="">Delete</a>
                     </td>
                 </tr>
             @endforeach
