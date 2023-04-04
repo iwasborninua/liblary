@@ -21,5 +21,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
     Route::get('/view/{id}', [\App\Http\Controllers\BookController::class, 'view'])->name('view');
+    Route::get('/delete/{id}', [\App\Http\Controllers\BookController::class, 'delete'])->name('delete');
 });
 

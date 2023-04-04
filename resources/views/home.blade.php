@@ -22,8 +22,8 @@
                 <td>{{$book->genre}}</td>
                 <td>
                     <a class="btn btn-info me-2" href="{{ url('/view/' . $book->id) }}">Detail</a>
-                    <a class="btn btn-info me-2" href="{{ url('/update/' . $book->id) }}">Update</a>
-                    <a class="btn btn-info"     href="{{ url('/delete/' . $book->id) }}">Delete</a>
+                    <a class="btn btn-primary me-2" href="{{ url('/update/' . $book->id) }}">Update</a>
+                    <a class="btn btn-danger"     href="{{ url('/delete/' . $book->id) }}">Delete</a>
                 </td>
             </tr>
         @endforeach
