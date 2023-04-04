@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,7 +21,11 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::middleware(['auth'])->group(function () {
     Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-    Route::get('/view/{id}', [\App\Http\Controllers\BookController::class, 'view'])->name('view');
-    Route::get('/delete/{id}', [\App\Http\Controllers\BookController::class, 'delete'])->name('delete');
+    Route::get('/view/{id}', [BookController::class, 'view'])->name('book.view');
+    Route::get('/delete/{id}', [BookController::class, 'delete'])->name('delete');
+    Route::get('/update/{id}', [BookController::class, 'update'])->name('update');
+    Route::put('/update/{id}', [BookController::class, 'bookUpdate'])->name('book.update');
+    Route::post('/book', [BookController::class, 'createBook'])->name('book.create');
+    Route::get('/create', [BookController::class, 'showCreateForm'])->name('book.createForm');
 });
 
