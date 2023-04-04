@@ -116,5 +116,4 @@ class BookController extends Controller
 
         return view('home', compact('books', 'query'));
     }
-
 }
