@@ -27,5 +27,8 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/update/{id}', [BookController::class, 'bookUpdate'])->name('book.update');
     Route::post('/book', [BookController::class, 'createBook'])->name('book.create');
     Route::get('/create', [BookController::class, 'showCreateForm'])->name('book.createForm');
+    Route::post('/', [BookController::class, 'search'])->name('book.search');
+
+
 });
 

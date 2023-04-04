@@ -105,4 +105,16 @@ class BookController extends Controller
         return view('book.create');
     }
 
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+
+        $books = Book::where('name', 'LIKE', "%$query%")
+            ->orWhere('author', 'LIKE', "%$query%")
+            ->orWhere('genre', 'LIKE', "%$query%")
+            ->get();
+
+        return view('home', compact('books', 'query'));
+    }
+
 }

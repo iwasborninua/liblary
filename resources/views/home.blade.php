@@ -2,6 +2,17 @@
 
 @section('content')
     <div class="container">
+    <section>
+        <form action="" method="POST">
+            @csrf
+            <div class="input-group mb-3">
+                <input type="text" name="query" class="form-control" placeholder="Search...">
+                <button class="btn btn-primary" type="submit">Search</button>
+            </div>
+        </form>
+
+    </section>
+
     <table class="table align-middle">
         <thead>
         <tr>
